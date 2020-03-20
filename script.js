@@ -32,17 +32,17 @@ function checkKey(e) {
     var stringcode = String.fromCharCode(keycode);
     console.log("keycode = " + keycode);
     console.log("keycode to text = " + stringcode);
-    let image = document.getElementById("Player_Ship")
-    let compImage = window.getComputedStyle(image)
-    if(keycode == 37){
-        var newleft = compImage.left + uni;
-        document.getElementById("Player_Ship").style.left = compImage.left + 100;
-        console.log(document.getElementById("Player_Ship").style.left)
-        console.log(compImage.left)
-        console.log(newleft)
-    }
+    let image = document.getElementById("Player_Ship");
+    let imagecomputed = getComputedStyle(image);
+    let imageleft = parseInt(imagecomputed.left)
+    console.log(imageleft)
     if(keycode == 39){
-        document.getElementById("Player_Ship").style.left =  document.getElementById("Player_Ship").style.left + 100 + "px"
+        document.getElementById("Player_Ship").style.left =  imageleft + 15 + "px";
+    }
+    if(keycode == 37){
+        if(imageleft > 0){
+            document.getElementById("Player_Ship").style.left = imageleft - 15 + "px";
+        }
     }
 
 }
