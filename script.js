@@ -34,10 +34,15 @@ function checkKey(e) {
     console.log("keycode to text = " + stringcode);
     let image = document.getElementById("Player_Ship");
     let imagecomputed = getComputedStyle(image);
-    let imageleft = parseInt(imagecomputed.left)
+    let imageleft = parseInt(imagecomputed.left);
+    let imageright = Math.abs(parseInt(imagecomputed.right));
     console.log(imageleft)
+    console.log(imageright)
+    console.log(windowwidht());
     if(keycode == 39){
-        document.getElementById("Player_Ship").style.left =  imageleft + 15 + "px";
+        if(imageright < windowwidht() - 65){
+            document.getElementById("Player_Ship").style.left =  imageleft + 15 + "px";
+        }
     }
     if(keycode == 37){
         if(imageleft > 0){
