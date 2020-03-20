@@ -1,0 +1,22 @@
+html{
+    margin: 0px;
+}
+
+body{
+    margin: 0px;
+}
+
+#Ship_Hold{
+    display: flex;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: black;
+}
+
+#Player_Ship{
+    position: relative;
+    display: block;
+    height: 80px;   
+}
