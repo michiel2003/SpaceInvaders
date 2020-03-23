@@ -58,4 +58,9 @@ function checkKey(e) {
 
 function shoot_laser(x, y){
     console.log("lase shot at " + x + "," + y);
+    var img =  document.createElement('img');
+    img.src = "laser.png";
+    img.style.bottom = y;
+    img.style.left = x
+    document.getElementById("body").appendChild(img);
 }
