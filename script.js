@@ -69,8 +69,8 @@ function shoot_laser(x, y){
     var windowhigh = windowheight();
     console.log(windowhigh);
     img.style.top = windowhigh;
-    x = x  - 15
-    img.style.left = x + 43 + "px";
-    imgarray.push(img);
-    document.body.appendChild(img)
+    img.style.left = x + 28 + "px";
+    var postion = imgarray.push(img);
+    document.getElementById("Ship_Hold").appendChild(img)
+    updater(postion);
 }
