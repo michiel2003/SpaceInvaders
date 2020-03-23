@@ -60,7 +60,12 @@ function shoot_laser(x, y){
     console.log("lase shot at " + x + "," + y);
     var img =  document.createElement('img');
     img.src = "laser.png";
-    img.style.bottom = y;
-    img.style.left = x
-    document.getElementById("body").appendChild(img);
+    img.style.position = "relative";
+    img.style.width = 4 + "px";
+    img.style.height = 15 + "px";
+    img.style.top = 800 + "px";
+    img.style.bottom = y + "px";
+    x = x  - 15
+    img.style.left = x + "px";
+    document.body.appendChild(img)
 }
