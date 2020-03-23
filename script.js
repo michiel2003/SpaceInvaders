@@ -41,13 +41,21 @@ function checkKey(e) {
     console.log(windowwidht());
     if(keycode == 39){
         if(imageright < windowwidht() - 65){
-            document.getElementById("Player_Ship").style.left =  imageleft + 15 + "px";
+            document.getElementById("Player_Ship").style.left =  imageleft + 10 + "px";
         }
     }
     if(keycode == 37){
         if(imageleft > 0){
-            document.getElementById("Player_Ship").style.left = imageleft - 15 + "px";
+            document.getElementById("Player_Ship").style.left = imageleft - 10 + "px";
         }
     }
+    if(keycode == 32){
+        console.log("laser fired")
+        shoot_laser(imageleft, 0);
+    }
 
+}
+
+function shoot_laser(x, y){
+    console.log("lase shot at " + x + "," + y);
 }
