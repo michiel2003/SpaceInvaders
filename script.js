@@ -15,6 +15,7 @@ function sound(src) {
 //maybe add sound later
 
 function windowheight(){
+    console.log("win height = " + window.innerHeight);
     return window.innerHeight;
 }
 function windowwidht(){
@@ -56,16 +57,20 @@ function checkKey(e) {
 
 }
 
+var imgarray = [];
+
 function shoot_laser(x, y){
     console.log("lase shot at " + x + "," + y);
     var img =  document.createElement('img');
     img.src = "laser.png";
-    img.style.position = "relative";
+    img.style.position = "fixed";
     img.style.width = 4 + "px";
     img.style.height = 15 + "px";
-    img.style.top = 800 + "px";
-    img.style.bottom = y + "px";
+    var windowhigh = windowheight();
+    console.log(windowhigh);
+    img.style.top = windowhigh;
     x = x  - 15
-    img.style.left = x + "px";
+    img.style.left = x + 43 + "px";
+    imgarray.push(img);
     document.body.appendChild(img)
 }

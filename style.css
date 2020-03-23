@@ -20,3 +20,8 @@ body{
     height: 60px;
     width: 60px;
 }
+
+@keyframes laser_shot{
+    from{};
+    to{top : 0px};
+}
