@@ -15,7 +15,6 @@ function sound(src) {
 //maybe add sound later
 
 function windowheight(){
-    console.log("win height = " + window.innerHeight);
     return window.innerHeight;
 }
 function windowwidht(){
@@ -25,6 +24,8 @@ function windowwidht(){
 
 
 document.onkeydown = checkKey;
+
+var laserAvailableVar = true
 
 function checkKey(e) {
 
@@ -52,9 +53,14 @@ function checkKey(e) {
     }
     if(keycode == 32){
         console.log("laser fired")
+        laserAvailableVar = false
         shoot_laser(imageleft, 0);
     }
 
+}
+
+function laserAvailable(){
+    laserAvailableVar= true
 }
 
 var imgarray = [];
@@ -68,9 +74,20 @@ function shoot_laser(x, y){
     img.style.height = 15 + "px";
     var windowhigh = windowheight();
     console.log(windowhigh);
-    img.style.top = windowhigh;
+    img.style.top = windowhigh - 80;
     img.style.left = x + 28 + "px";
-    var postion = imgarray.push(img);
-    document.getElementById("Ship_Hold").appendChild(img)
-    updater(postion);
+    imgarray.push(img);
+    img.style.animationName = "laser_shot";
+    img.style.animationDuration = "3s";
+    document.getElementById("Ship_Hold").appendChild(img);
+}
+
+function updateImages(){
+    for(i = 0; i < imgarray.length; i++){
+        imgarray[i].style.top = imgarray[i].offsetTop -20 +"px";
+    }
+}
+
+function updateHandler(){
+    setInterval(updateImages, 50)
 }
