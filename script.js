@@ -82,12 +82,36 @@ function shoot_laser(x, y){
     document.getElementById("Ship_Hold").appendChild(img);
 }
 
+function updateHandler(){
+    setInterval(updateImages, 50)
+}
+
 function updateImages(){
     for(i = 0; i < imgarray.length; i++){
-        imgarray[i].style.top = imgarray[i].offsetTop -20 +"px";
+        imgarray[i].style.top = imgarray[i].offsetTop - 20 +"px";
     }
 }
 
-function updateHandler(){
-    setInterval(updateImages, 50)
+
+
+
+
+//adding enemys
+
+var ENEMYS = [];
+
+function AddEnemy(){
+    var enemy = document.createElement('img');
+    enemy.src = "enemy.png";
+    enemy.style.width = 80 + "px";
+    enemy.style.height = 60 + "px";
+    var xStart = enemy.offsetLeft;
+    var yStart = enemy.offsetTop;
+    var xEnd = enemy.offsetLeft + 60;
+    var yEnd = enemy.offsetTop + 80;
+    console.log("xs = " + xStart);
+    console.log("ys = " + yStart);
+    console.log("xe = " + xEnd);
+    console.log("ye = " + yEnd);
+    document.getElementById("Enemy_Hold").appendChild(enemy);
 }
